@@ -1,3 +1,6 @@
 name: Michal Kral, FIIT student
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+collections: 
+  collProjects: 
+    output: true

@@ -1,0 +1,22 @@
+---
+layout: layout_projects
+title: Projects
+---
+<div class="blurb">
+	<ul class="posts">
+
+	<h3>School project's </h3>
+	  {% for act in site.collProjects %}
+	  	{% if act.categories contains 'school' %}
+	   		<li><a href="{{ act.url }}" title="{{ act.title }}">{{ act.title }}</a></li>	 
+	   	{% endif %}
+	  {% endfor %}
+
+	<h3> Home project's </h3>
+	  {% for act in site.collProjects %}
+	  	{% if act.categories contains 'home' %}
+	   		<li><a href="{{ act.url }}" title="{{ act.title }}">{{ act.title }}</a></li>	 
+	   	{% endif %}
+	  {% endfor %}
+	</ul>
+</div><!-- /.blurb -->
