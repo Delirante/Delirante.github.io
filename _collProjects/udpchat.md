@@ -16,6 +16,7 @@ Takto vyzerala trieda na forwardovanie pomocou UPnP protokolu.
 
 
 
+{% highlight java linenos %}
 
 import java.io.IOException;
 import javax.swing.JOptionPane;
@@ -96,3 +97,4 @@ public class Forwarding {
 		Logger.getLogger(Forwarding.class).debug("UPNP- method shutDown end");
 	}	
 }
+{% endhighlight %}
