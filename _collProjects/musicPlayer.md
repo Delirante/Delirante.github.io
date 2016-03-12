@@ -9,9 +9,3 @@ mainHeading: Java music player
 {% include notEnglish.html %}
 
 Power full Music player.
-
-	{% highlight ruby linenos %}
-def foo
-  puts 'foo'
-end
-	{% endhighlight %}

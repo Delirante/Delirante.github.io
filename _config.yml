@@ -1,7 +1,7 @@
 name: Michal Kral, FIIT student
 markdown: kramdown
+highlighter: pygments
 permalink: /blog/:year/:month/:day/:title
 collections: 
   collProjects: 
     output: true
-highlighter: rouge
