@@ -15,7 +15,6 @@ V projekte sa zaoberám UDP chatom, bez stáleho hostovacieho serveru. Jeden z p
 Takto vyzerala trieda na forwardovanie pomocou UPnP protokolu. 
 
 
-
 {% highlight java linenos %}
 
 import java.io.IOException;
@@ -35,9 +34,7 @@ public class Forwarding {
 	
 	//Forvardujem clienta aj server naraz inak to blbne I dunno why
 	public void forwardPort(int port1, String localIpAdress1, int port2, String localIpAdress2) throws IOException, SAXException, ParserConfigurationException
-	{
-		Logger.getLogger(Forwarding.class).debug("UPNP- method forradPort start");		
-		
+	{		
 		this.port1 = port1;
 		this.port2 = port2;
 		
@@ -46,55 +43,33 @@ public class Forwarding {
 		int i = 0;
 		while(d == null && i != 4)		//Skusanie o UPnP pokial nespravy connect alebo pocet pokusov presiahol 4
 		{										//Ak router nema UPnP on alebo je blby tak v zivote nespravy forwarding
-			discover.discover();
-			Logger.getLogger(Forwarding.class).info("UPNP- try to make UPnP connection "+(++i));
+			discover.discover();			
 			d = discover.getValidGateway();
 		}
 		
-		if (null != d) 
-		{		   
-			Logger.getLogger(Forwarding.class).info("UPNP- Router found");
-		} 
+		if (null != d) 	{	} 
 		else 
-		{			
-			Logger.getLogger(Forwarding.class).warn("UPNP- UPnP is turn off or bad connection to router");
-			
+		{						
 			JOptionPane.showMessageDialog(null, "ERROR- UPnP is turn off or you have bad connection to your router, try to connect directly. "
 					+ "Aplication tried make connection "+i+" times");
 			System.exit(0);		    
 		}				 
-					
-		Logger.getLogger(Forwarding.class).info("UPNP- Sending request");
 		
 		if (!d.addPortMapping(port1, port1,localIpAdress1,"UDP","My forward1") && 			//forward portov pre server aj clienta
 				!d.addPortMapping(port2, port2,localIpAdress2,"UDP","My forward2")) 
-		{
-			Logger.getLogger(Forwarding.class).warn("UPNP- Mapping failed");
-			
+		{			
 			JOptionPane.showMessageDialog(null, "ERROR- Port mapping failed, restart your router, if you have still problem with this, buy better router");
 			System.exit(0);
 		} 
-		else
-		{	
-			Logger.getLogger(Forwarding.class).info("UPNP- Mapping successful");			       
-		}
-		
-		Logger.getLogger(Forwarding.class).debug("UPNP- method forradPort end");
 	}
 	
 	public void shutDown() throws IOException, SAXException		//odstranenie portforwardingu
-	{
-		Logger.getLogger(Forwarding.class).debug("UPNP- method shutDown start");
-		
+	{		
 		if(d != null)
 		{
 			d.deletePortMapping(port1,"UDP");
 			d.deletePortMapping(port2,"UDP");
-			Logger.getLogger(Forwarding.class).info("UPNP- Port mapping removed");
-			Logger.getLogger(Forwarding.class).info("UPNP- Stopping weupnp");
-		}				
-		
-		Logger.getLogger(Forwarding.class).debug("UPNP- method shutDown end");
+		}						
 	}	
 }
 {% endhighlight %}
