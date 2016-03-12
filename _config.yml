@@ -4,3 +4,4 @@ permalink: /blog/:year/:month/:day/:title
 collections: 
   collProjects: 
     output: true
+highlighter: rouge
