@@ -4,10 +4,29 @@ title: Blog
 mainHeading: Messages
 ---
 
-	<h2>Year: 2016</h2>
-	{{ site.posts | where:"year","2016" }}
+<hr>
 
-	<h2>Year: 2015</h2>
-	{{ site.posts | where:"year","2015" }}
+<div align="center">
 
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="panel-title" style="font-weight: bold">Year: 2016</h2>
+		</div>
+		<div class="panel-body">
+			{{ site.posts | where:"year","2016" }}
+		</div>
+	</div>
+	
+	<hr>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="panel-title" style="font-weight: bold">Year: 2015</h2>
+		</div>
+		<div class="panel-body">
+			{{ site.posts | where:"year","2015" }}
+		</div>
+	</div>
+
+</div>
 	

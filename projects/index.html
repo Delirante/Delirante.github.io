@@ -4,19 +4,20 @@ title: Projects
 mainHeading: Projects
 ---
 
-	<ul>
+<h2>School project's </h2>
+<div class="list-group">
+	{% for act in site.collProjects %}
+  		{% if act.categories contains 'school' %}
+   			<a class="list-group-item" style="max-width: 200px; margin-left: 20px" href="{{ act.url }}" title="{{ act.title }}">{{ act.title }}</a>
+   		{% endif %}
+  	{% endfor %}
+</div>
 
-	<h2>School project's </h2>
-	  {% for act in site.collProjects %}
-	  	{% if act.categories contains 'school' %}
-	   		<li><a href="{{ act.url }}" title="{{ act.title }}">{{ act.title }}</a></li>	 
-	   	{% endif %}
-	  {% endfor %}
-
-	<h2> Home project's </h2>
-	  {% for act in site.collProjects %}
-	  	{% if act.categories contains 'home' %}
-	   		<li><a href="{{ act.url }}" title="{{ act.title }}">{{ act.title }}</a></li>	 
-	   	{% endif %}
-	  {% endfor %}
-	</ul>
+<h2> Home project's </h2>
+<div class="list-group">
+	{% for act in site.collProjects %}
+  		{% if act.categories contains 'home' %}
+   			<a class="list-group-item" style="max-width: 200px; margin-left: 20px" href="{{ act.url }}" title="{{ act.title }}">{{ act.title }}</a>
+   		{% endif %}
+  	{% endfor %}
+</div>
