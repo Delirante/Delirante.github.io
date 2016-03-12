@@ -1,22 +1,22 @@
 ---
-layout: layout_projects
+layout: default
 title: Projects
+mainHeading: Projects
 ---
-<div class="blurb">
-	<ul class="posts">
 
-	<h3>School project's </h3>
+	<ul>
+
+	<h2>School project's </h2>
 	  {% for act in site.collProjects %}
 	  	{% if act.categories contains 'school' %}
 	   		<li><a href="{{ act.url }}" title="{{ act.title }}">{{ act.title }}</a></li>	 
 	   	{% endif %}
 	  {% endfor %}
 
-	<h3> Home project's </h3>
+	<h2> Home project's </h2>
 	  {% for act in site.collProjects %}
 	  	{% if act.categories contains 'home' %}
 	   		<li><a href="{{ act.url }}" title="{{ act.title }}">{{ act.title }}</a></li>	 
 	   	{% endif %}
 	  {% endfor %}
 	</ul>
-</div><!-- /.blurb -->
