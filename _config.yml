@@ -1,6 +1,6 @@
 name: Michal Kral, FIIT student
 markdown: kramdown
-highlighter: pygments
+highlighter: rogue
 permalink: /blog/:year/:month/:day/:title
 collections: 
   collProjects: 
