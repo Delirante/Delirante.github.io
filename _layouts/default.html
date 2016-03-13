@@ -38,12 +38,15 @@
 			<h1>{{page.mainHeading}}</h1>
 			
 			{{content}}
+
 			</div>
 
 			<footer class="navbar-fixed-bottom text-center foot container" style="background-color: #F8F8F8">      
         		<div class="row">
 		            <a href="https://github.com/Delirante">GitHub: github.com/Delirante</a> <br/>
 					Owner of site is Michal Kral <br/>
+
+					{% capture time %}{{ content | reading_time }}{% endcapture %}
 					This page will take {{ time }} {% if time == '1' %}minute{% else %}minutes{% endif %} to read. 
 				</div>					
 			</footer>	
