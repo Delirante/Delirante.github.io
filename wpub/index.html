@@ -4,4 +4,12 @@ title: Web publishing
 mainHeading: Projets from web publishing
 ---
 
-On this page will be projects which will be made on school hours of web publishing.
+On this page are projects which I made on school hours of web publishing.
+
+<div class="list-group" style="margin-top: 20px">
+	{% for act in site.collProjects %}
+  		{% if act.categories contains 'wpub' %}
+   			<a class="list-group-item" style="max-width: 200px; margin-left: 20px" href="{{ act.url }}" title="{{ act.title }}">{{ act.title }}</a>
+   		{% endif %}
+  	{% endfor %}
+</div>
